@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "PostOnly",
+  "description": "Only allow posting on X",
+  "version": "1.0",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://x.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'unsafe-inline'; object-src 'self';"
+  }
+}
